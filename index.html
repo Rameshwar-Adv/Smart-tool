@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ToolKit Pro - Online Image & PDF Tools</title>
+    <title>ToolMaster - Online Image & PDF Tools</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -334,6 +334,17 @@
             transition: var(--transition);
             display: flex;
             flex-direction: column;
+            position: relative;
+        }
+
+        .tool-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
         }
 
         .tool-card:hover {
@@ -352,12 +363,16 @@
             margin-bottom: 1rem;
             font-size: 1.5rem;
             color: var(--primary);
+            position: relative;
+            z-index: 2;
         }
 
         .tool-card h3 {
             font-size: 1.2rem;
             margin-bottom: 0.5rem;
             color: var(--dark);
+            position: relative;
+            z-index: 2;
         }
 
         .tool-card p {
@@ -365,6 +380,8 @@
             font-size: 0.9rem;
             margin-bottom: 1rem;
             flex-grow: 1;
+            position: relative;
+            z-index: 2;
         }
 
         .tool-link {
@@ -374,6 +391,16 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .tool-link i {
+            transition: var(--transition);
+        }
+
+        .tool-card:hover .tool-link i {
+            transform: translateX(3px);
         }
 
         /* Popular Tools */
@@ -393,6 +420,17 @@
             overflow: hidden;
             box-shadow: var(--shadow-sm);
             transition: var(--transition);
+            position: relative;
+        }
+
+        .popular-tool-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
         }
 
         .popular-tool-card:hover {
@@ -408,10 +446,14 @@
             justify-content: center;
             font-size: 3rem;
             color: var(--primary);
+            position: relative;
+            z-index: 2;
         }
 
         .tool-info {
             padding: 1.5rem;
+            position: relative;
+            z-index: 2;
         }
 
         .tool-info h3 {
@@ -668,7 +710,7 @@
         <div class="container header-container">
             <a href="/" class="logo">
                 <i class="fas fa-tools"></i>
-                <span>ToolKit Pro</span>
+                <span>ToolMaster</span>
             </a>
             
             <button class="mobile-menu-btn" id="mobileMenuBtn">
@@ -692,8 +734,8 @@
         <section class="hero">
             <div class="container">
                 <div class="hero-content">
-                    <h1>Your All-in-One Online Toolbox</h1>
-                    <p>Powerful, easy-to-use tools for all your image and PDF needs. No installation required - work directly in your browser.</p>
+                    <h1>Powerful Online Tools for All Your Needs</h1>
+                    <p>Free, easy-to-use tools for images, PDFs, and more. No installation required - work directly in your browser.</p>
                     <div class="hero-btns">
                         <a href="/image-tools" class="btn btn-primary">
                             <i class="fas fa-image"></i> Image Tools
@@ -767,215 +809,93 @@
                 </div>
                 
                 <div class="tools-grid">
-                    <div class="tool-card">
-    <a href="/tool/image-compressor.html" class="card-link" aria-label="Image Compressor Tool"></a>
-    <div class="tool-icon">
-        <i class="fas fa-compress-alt"></i>
-    </div>
-    <h3>Image Compressor</h3>
-    <p>Reduce image file size without losing quality</p>
-    <a href="/image-compressor" class="tool-link">
-        Use Tool <i class="fas fa-arrow-right"></i>
-    </a>
-</div>
-
-<style>
-.tool-card {
-    position: relative;
-    background-color: #fff;
-    border-radius: 12px;
-    padding: 20px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    transition: all 0.3s ease;
-    overflow: hidden;
-    border: 1px solid #e9ecef;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
-
-/* Make entire card clickable */
-.card-link {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    text-indent: -9999px;
-}
-
-.tool-icon, 
-.tool-link {
-    position: relative;
-    z-index: 2;
-}
-
-.tool-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 24px rgba(67, 97, 238, 0.15);
-    border-color: rgba(67, 97, 238, 0.3);
-}
-
-.tool-icon {
-    width: 60px;
-    height: 60px;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
-    background-color: rgba(67, 97, 238, 0.1);
-    color: #4361ee;
-    font-size: 24px;
-}
-
-.tool-card h3 {
-    font-size: 1.2rem;
-    margin-bottom: 12px;
-    color: #212529;
-    font-weight: 600;
-    position: relative;
-    z-index: 2;
-}
-
-.tool-card p {
-    color: #6c757d;
-    font-size: 0.95rem;
-    line-height: 1.5;
-    margin-bottom: 16px;
-    position: relative;
-    z-index: 2;
-}
-
-.tool-link {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    padding: 10px 16px;
-    background-color: #f8f9fa;
-    border-radius: 8px;
-    color: #4361ee;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    border: 1px solid #e9ecef;
-    position: relative;
-    z-index: 2;
-    margin-top: auto;
-    width: fit-content;
-}
-
-.tool-link i {
-    transition: transform 0.3s ease;
-}
-
-.tool-card:hover .tool-link {
-    background-color: #4361ee;
-    color: white;
-    border-color: #4361ee;
-}
-
-.tool-card:hover .tool-link i {
-    transform: translateX(3px);
-    color: white;
-}
-
-/* Prevent nested link interactions */
-.tool-link:hover {
-    text-decoration: none;
-}
-
-@media (max-width: 768px) {
-    .tool-card {
-        padding: 16px;
-    }
-    
-    .tool-icon {
-        width: 50px;
-        height: 50px;
-        font-size: 20px;
-        margin-bottom: 15px;
-    }
-}
-</style>
+                    <a href="/image-compressor" class="tool-card">
+                        <div class="tool-icon">
+                            <i class="fas fa-compress-alt"></i>
+                        </div>
+                        <h3>Image Compressor</h3>
+                        <p>Reduce image file size without losing quality</p>
+                        <span class="tool-link">
+                            Use Tool <i class="fas fa-arrow-right"></i>
+                        </span>
+                    </a>
                     
-                    <div class="tool-card">
+                    <a href="/pdf-compressor" class="tool-card">
                         <div class="tool-icon">
                             <i class="fas fa-file-pdf"></i>
                         </div>
                         <h3>PDF Compressor</h3>
                         <p>Make PDF files smaller while preserving quality</p>
-                        <a href="/pdf-compressor" class="tool-link">
+                        <span class="tool-link">
                             Use Tool <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
+                        </span>
+                    </a>
                     
-                    <div class="tool-card">
+                    <a href="/image-converter" class="tool-card">
                         <div class="tool-icon">
                             <i class="fas fa-exchange-alt"></i>
                         </div>
                         <h3>Image Converter</h3>
                         <p>Convert between JPG, PNG, WebP and more</p>
-                        <a href="/image-converter" class="tool-link">
+                        <span class="tool-link">
                             Use Tool <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
+                        </span>
+                    </a>
                     
-                    <div class="tool-card">
+                    <a href="/pdf-to-jpg" class="tool-card">
                         <div class="tool-icon">
                             <i class="fas fa-file-export"></i>
                         </div>
                         <h3>PDF to JPG</h3>
                         <p>Convert PDF pages to high-quality JPG images</p>
-                        <a href="/pdf-to-jpg" class="tool-link">
+                        <span class="tool-link">
                             Use Tool <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
+                        </span>
+                    </a>
                     
-                    <div class="tool-card">
+                    <a href="/image-cropper" class="tool-card">
                         <div class="tool-icon">
                             <i class="fas fa-crop-alt"></i>
                         </div>
                         <h3>Image Cropper</h3>
                         <p>Crop images to any size or aspect ratio</p>
-                        <a href="/image-cropper" class="tool-link">
+                        <span class="tool-link">
                             Use Tool <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
+                        </span>
+                    </a>
                     
-                    <div class="tool-card">
+                    <a href="/pdf-to-word" class="tool-card">
                         <div class="tool-icon">
                             <i class="fas fa-file-word"></i>
                         </div>
                         <h3>PDF to Word</h3>
                         <p>Convert PDF files to editable Word documents</p>
-                        <a href="/pdf-to-word" class="tool-link">
+                        <span class="tool-link">
                             Use Tool <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
+                        </span>
+                    </a>
                     
-                    <div class="tool-card">
+                    <a href="/image-resizer" class="tool-card">
                         <div class="tool-icon">
                             <i class="fas fa-object-group"></i>
                         </div>
                         <h3>Image Resizer</h3>
                         <p>Resize images to exact dimensions or percentages</p>
-                        <a href="/image-resizer" class="tool-link">
+                        <span class="tool-link">
                             Use Tool <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
+                        </span>
+                    </a>
                     
-                    <div class="tool-card">
+                    <a href="/pdf-merger" class="tool-card">
                         <div class="tool-icon">
                             <i class="fas fa-file-merge"></i>
                         </div>
                         <h3>PDF Merger</h3>
                         <p>Combine multiple PDFs into a single document</p>
-                        <a href="/pdf-merger" class="tool-link">
+                        <span class="tool-link">
                             Use Tool <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
+                        </span>
+                    </a>
                 </div>
             </div>
         </section>
@@ -989,56 +909,55 @@
                 </div>
                 
                 <div class="popular-tools-grid">
-                    <div class="popular-tool-card">
-                        <div class="tool-image">
-                            <i class="fas fa-compress-alt"></i>
-                        </div>
+                    <a href="/tool/image-compressor.html" class="tool-link" style="margin-top: 8px;">
+                     Visit Page <i class="fas fa-arrow-right"></i>
+                </a>
                         <div class="tool-info">
                             <h3>Image Compressor</h3>
                             <p>Reduce image file size by up to 90% while maintaining good quality. Perfect for websites and social media.</p>
-                            <a href="/image-compressor" class="btn btn-primary" style="width: 100%;">
+                            <div class="btn btn-primary" style="width: 100%;">
                                 Use Tool
-                            </a>
+                            </div>
                             <div class="tool-stats">
                                 <span><i class="fas fa-users"></i> 10,000+ daily</span>
                                 <span><i class="fas fa-star"></i> 4.9/5 rating</span>
                             </div>
                         </div>
-                    </div>
+                    </a>
                     
-                    <div class="popular-tool-card">
+                    <a href="/pdf-compressor" class="popular-tool-card">
                         <div class="tool-image">
                             <i class="fas fa-file-pdf"></i>
                         </div>
                         <div class="tool-info">
                             <h3>PDF Compressor</h3>
                             <p>Make your PDF files smaller without losing quality. Great for email attachments and web uploads.</p>
-                            <a href="/pdf-compressor" class="btn btn-primary" style="width: 100%;">
+                            <div class="btn btn-primary" style="width: 100%;">
                                 Use Tool
-                            </a>
+                            </div>
                             <div class="tool-stats">
                                 <span><i class="fas fa-users"></i> 8,500+ daily</span>
                                 <span><i class="fas fa-star"></i> 4.8/5 rating</span>
                             </div>
                         </div>
-                    </div>
+                    </a>
                     
-                    <div class="popular-tool-card">
+                    <a href="/image-converter" class="popular-tool-card">
                         <div class="tool-image">
                             <i class="fas fa-exchange-alt"></i>
                         </div>
                         <div class="tool-info">
                             <h3>Image Converter</h3>
                             <p>Convert between JPG, PNG, WebP, GIF and more. Preserve quality while changing formats.</p>
-                            <a href="/image-converter" class="btn btn-primary" style="width: 100%;">
+                            <div class="btn btn-primary" style="width: 100%;">
                                 Use Tool
-                            </a>
+                            </div>
                             <div class="tool-stats">
                                 <span><i class="fas fa-users"></i> 7,200+ daily</span>
                                 <span><i class="fas fa-star"></i> 4.7/5 rating</span>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
             </div>
         </section>
@@ -1061,7 +980,7 @@
         <div class="container">
             <div class="footer-container">
                 <div class="footer-col footer-about">
-                    <h3>ToolKit Pro</h3>
+                    <h3>ToolMaster</h3>
                     <p>We provide free, high-quality online tools for all your image and PDF needs. No registration required - just simple, powerful tools that work.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -1106,7 +1025,7 @@
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2023 ToolKit Pro. All rights reserved.</p>
+                <p>&copy; 2023 ToolMaster. All rights reserved.</p>
             </div>
         </div>
     </footer>
